@@ -7,7 +7,7 @@ public class Main {
 		
 		JFrame mainFrame = new JFrame();
 		
-		mainFrame.setTitle("My First CIIC 4010/ICOM 4015 GUI!!!!!");
+		mainFrame.setTitle("My First GUI");
 		
 		mainFrame.setSize(400, 400);
 		
@@ -21,7 +21,7 @@ public class Main {
 		
 		while (true) {
 			mainFrame.repaint();
-			Thread.sleep(100);
+			Thread.sleep(50);
 		}
 		
 	}

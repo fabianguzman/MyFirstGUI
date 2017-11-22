@@ -78,13 +78,15 @@ public class Car {
 			yellowLight = new Ellipse2D.Double(this.getXPos()+0, this.getYPos()+10, 5, 5);
 			redLight = new Ellipse2D.Double(this.getXPos()+55, this.getYPos()+10, 5, 5);
 		}
-	
+		
+		g2.setColor(Color.BLUE);
 		g2.draw(rearWindow);
 		g2.draw(roof);
 		g2.draw(frontWindow);
-		g2.draw(body);
-		g2.draw(rearTire);
-		g2.draw(frontTire);
+		g2.fill(body);
+		g2.setColor(Color.BLACK);
+		g2.fill(rearTire);
+		g2.fill(frontTire);
 		
 		g2.setColor(Color.RED);
 		g2.fill(redLight);
