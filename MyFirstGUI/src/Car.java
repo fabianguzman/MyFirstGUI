@@ -10,9 +10,11 @@ public class Car {
 	private int xPos;
 	private int yPos;
 	private int width;
+	private int height;
 	private int direction;
 	
 	private final static int DEFAULT_CAR_WIDTH = 60;
+	private final static int DEFAULT_CAR_HEIGHT = 30;
 	
 	private static long counter = 0;
 	
@@ -20,26 +22,21 @@ public class Car {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.width = DEFAULT_CAR_WIDTH;
+		this.height = DEFAULT_CAR_HEIGHT;
 		this.direction = 1; // Car initially moving left to right
 		counter++;
-		System.out.println("Number of objects = " + counter);
+		//System.out.println("Number of objects = " + counter);
 	}
 	
-	public int getXPos() {
-		return xPos;
-	}
+	public int getXPos() {	return xPos;	}
 	
-	public int getYPos() {
-		return yPos;
-	}
+	public int getYPos() {	return yPos;	}
 	
-	public int getWidth() {
-		return width;
-	}
+	public int getWidth() {	return width;	}
+	
+	public int getHeight()	{	return height;	}
 
-	public int getDirection() {
-		return direction;
-	}
+	public int getDirection() {	return direction;	}
 
 	public void setPos(int xPos, int yPos) {
 		this.xPos = xPos;
@@ -50,6 +47,10 @@ public class Car {
 		this.width = width;
 	}
 	
+	public void setHeight(int height)	{
+		this.height = height;
+	}
+	
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
@@ -57,8 +58,6 @@ public class Car {
 	public void draw(Graphics g) {
 		
 		Graphics2D g2 = (Graphics2D) g;
-		//Rectangle box = new Rectangle(0,0, 50, 50);
-		//g2.draw(box);
 		
 		Line2D.Double rearWindow = new Line2D.Double(this.getXPos()+10, this.getYPos()+10, this.getXPos()+20, this.getYPos()+0);
 		Line2D.Double roof = new Line2D.Double(this.getXPos()+20, this.getYPos()+0, this.getXPos()+40, this.getYPos()+0);

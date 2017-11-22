@@ -9,19 +9,12 @@ import javax.swing.JComponent;
 
 public class MyComponent extends JComponent {
 
-	//	Car topLeftCar = new Car(0,0);
-	//	Car bottomRightCar = new Car(0,0);
 	Car theCar = new Car(0,0);
 
-	private static Random rand = new Random();
+	//private static Random rand = new Random();
 
 	public void paintComponent(Graphics g) {
-		//Car topLeftCar = new Car(0,0);
-		//topLeftCar.setPos(0, 0);
-		//topLeftCar.draw(g);
-		//Car bottomRightCar = new Car(this.getWidth()-60,this.getHeight()-30);
-		//bottomRightCar.setPos(this.getWidth()-60, this.getHeight()-30);
-		//bottomRightCar.draw(g);
+
 		int nextX = theCar.getXPos();
 		int nextY = theCar.getYPos();
 		if (theCar.getDirection() > 0) {
@@ -31,8 +24,8 @@ public class MyComponent extends JComponent {
 			}
 			else if (theCar.getXPos() + theCar.getWidth() == this.getWidth()) {
 				// Car exactly at right edge
-				nextY += 40;
-				if (nextY > this.getHeight()) {
+				nextY += 30;
+				if (nextY + theCar.getHeight() > this.getHeight()) {
 					nextY = 0;
 				}
 				theCar.setDirection(-1);
@@ -49,8 +42,8 @@ public class MyComponent extends JComponent {
 			}
 			else if (theCar.getXPos() == 0) {
 				// Car exactly at left edge
-				nextY += 40;
-				if (nextY > this.getHeight()) {
+				nextY += 30;
+				if (nextY + theCar.getHeight() > this.getHeight()) {
 					nextY = 0;
 				}
 				theCar.setDirection(1);
